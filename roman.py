@@ -76,7 +76,7 @@ def romanToInt(s):
 
     while i < len(s):
         if s[i] == 'I':
-            try:
+            if i+1 < len(s):
                 if s[i+1] == 'V':
                     finalNumber += 4
                     i += 1
@@ -85,14 +85,14 @@ def romanToInt(s):
                     i += 1
                 else:
                     finalNumber += 1
-            except:
+            else:
                 finalNumber += 1
 
         elif s[i] == 'V':
             finalNumber += 5
 
         elif s[i] == 'X':
-            try:
+            if i+1 < len(s):
                 if s[i+1] == 'L':
                     finalNumber += 40
                     i += 1
@@ -101,14 +101,14 @@ def romanToInt(s):
                     i += 1
                 else:
                     finalNumber += 10
-            except:
+            else:
                 finalNumber += 10
 
         elif s[i] == 'L':
             finalNumber += 50
 
         elif s[i] == 'C':
-            try:
+            if i+1 < len(s):
                 if s[i+1] == 'D':
                     finalNumber += 400
                     i += 1
@@ -117,7 +117,7 @@ def romanToInt(s):
                     i += 1
                 else:
                     finalNumber += 100
-            except:
+            else:
                 finalNumber += 100
 
         elif s[i] == 'D':
